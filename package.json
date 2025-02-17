@@ -1,0 +1,35 @@
+{
+  "name": "employee-management-lit",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "webpack serve --config webpack.config.js",
+    "start": "web-dev-server --config web-dev-server.config.js",
+    "test": "web-test-runner \"src/tests/**/*.test.js\" --config web-test-runner.config.js --node-resolve --setup=src/tests/setup.js",
+    "coverage": "npm run test -- --coverage | grep -B 1 'Coverage'"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.5.1",
+    "@vaadin/router": "^2.0.0",
+    "lit": "^3.2.1",
+    "redux": "^5.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.26.9",
+    "@babel/preset-env": "^7.26.9",
+    "@open-wc/testing": "^4.0.0",
+    "@web/dev-server": "^0.4.6",
+    "@web/dev-server-esbuild": "^1.0.3",
+    "@web/test-runner": "^0.20.0",
+    "babel-loader": "^9.2.1",
+    "chai": "^5.2.0",
+    "css-loader": "^7.1.2",
+    "immer": "^10.1.1",
+    "mocha": "^11.1.0",
+    "process": "^0.11.10",
+    "sinon": "^19.0.2",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.98.0",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.0"
+  }
+}
