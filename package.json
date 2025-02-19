@@ -1,11 +1,17 @@
 {
   "name": "employee-management-lit",
   "version": "1.0.0",
+  "description": "Employee Management Application built with LitElement",
   "scripts": {
-    "dev": "webpack serve --config webpack.config.js",
-    "start": "web-dev-server --config web-dev-server.config.js",
-    "test": "web-test-runner \"src/tests/**/*.test.js\" --config web-test-runner.config.js --node-resolve --setup=src/tests/setup.js",
-    "coverage": "npm run test -- --coverage | grep -B 1 'Coverage'"
+    "dev": "rollup -c -w",
+    "start": "rollup -c --watch",
+    "build": "rollup -c",
+    "serve": "wds --watch --root-dir dev ", 
+    "test": "wtr \"src/tests/**/*.test.js\" --node-resolve --setup=src/tests/setup.js",
+    "test:watch": "wtr \"src/tests/**/*.test.js\" --node-resolve --setup=src/tests/setup.js --watch",
+    "coverage": "npm run test -- --coverage | grep -B 1 'Coverage'",
+    "lint": "eslint \"**/*.js\"",
+    "format": "prettier \"**/*.{cjs,html,js,json,md,ts}\" --ignore-path ./.eslintignore --write"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.5.1",
@@ -17,19 +23,32 @@
     "@babel/core": "^7.26.9",
     "@babel/preset-env": "^7.26.9",
     "@open-wc/testing": "^4.0.0",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^28.0.2",
+    "@rollup/plugin-node-resolve": "^15.3.1",
+    "@rollup/plugin-replace": "^5.0.7",
+    "@rollup/plugin-terser": "^0.4.4",
     "@web/dev-server": "^0.4.6",
     "@web/dev-server-esbuild": "^1.0.3",
+    "@web/dev-server-legacy": "^2.1.1",
     "@web/test-runner": "^0.20.0",
-    "babel-loader": "^9.2.1",
+    "@web/test-runner-playwright": "^0.11.0",
     "chai": "^5.2.0",
     "css-loader": "^7.1.2",
+    "eslint": "^8.15.0",
     "immer": "^10.1.1",
     "mocha": "^11.1.0",
+    "prettier": "^2.6.2",
     "process": "^0.11.10",
+    "rollup": "^4.34.8",
+    "rollup-plugin-livereload": "^2.0.5",
+    "rollup-plugin-serve": "^3.0.0",
+    "rollup-plugin-summary": "^3.0.0",
     "sinon": "^19.0.2",
-    "style-loader": "^4.0.0",
-    "webpack": "^5.98.0",
-    "webpack-cli": "^6.0.1",
-    "webpack-dev-server": "^5.2.0"
-  }
+    "style-loader": "^4.0.0"
+  },
+  "customElements": "custom-elements.json",
+  "author": "Aygül",
+  "license": "MIT",
+  "type": "module"
 }
